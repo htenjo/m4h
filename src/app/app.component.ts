@@ -7,111 +7,248 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
-    json = { title: 'Product Feedback Survey Example', showProgressBar: 'top', pages: [
-        {
-          questions: [{
-              type: 'matrix',
-              name: 'Quality',
-              title: 'Please indicate if you agree or disagree with the following statements',
-              columns: [{
-                  value: 1,
-                  text: 'Strongly Disagree'
-                },
-                {
-                  value: 2,
-                  text: 'Disagree'
-                },
-                {
-                  value: 3,
-                  text: 'Neutral'
-                },
-                {
-                  value: 4,
-                  text: 'Agree'
-                },
-                {
-                  value: 5,
-                  text: 'Strongly Agree'
-                }
-              ],
-              rows: [{
-                  value: 'affordable',
-                  text: 'Product is affordable'
-                },
-                {
-                  value: 'does what it claims',
-                  text: 'Product does what it claims'
-                },
-                {
-                  value: 'better then others',
-                  text: 'Product is better than other products on the market'
-                },
-                {
-                  value: 'easy to use',
-                  text: 'Product is easy to use'
-                }
-              ]
-            },
-            {
-              type: 'rating',
-              name: 'satisfaction',
-              title: 'How satisfied are you with the Product?',
-              mininumRateDescription: 'Not Satisfied',
-              maximumRateDescription: 'Completely satisfied'
-            },
-            {
-              type: 'rating',
-              name: 'recommend friends',
-              visibleIf: '{satisfaction} > 3',
-              title: 'How likely are you to recommend the Product to a friend or co-worker?',
-              mininumRateDescription: 'Will not recommend',
-              maximumRateDescription: 'I will recommend'
-            },
-            {
-              type: 'comment',
-              name: 'suggestions',
-              title: 'What would make you more satisfied with the Product?',
-            }
-          ]
-        }, {
-          questions: [{
-              type: 'radiogroup',
-              name: 'price to competitors',
-              title: 'Compared to our competitors, do you feel the Product is',
-              choices: ['Less expensive', 'Priced about the same', 'More expensive', 'Not sure']
-            },
-            {
-              type: 'radiogroup',
-              name: 'price',
-              title: 'Do you feel our current price is merited by our product?',
-              choices: ['correct|Yes, the price is about right',
-                'low|No, the price is too low for your product',
-                'high|No, the price is too high for your product'
-              ]
-            },
-            {
-              type: 'multipletext',
-              name: 'pricelimit',
-              title: 'What is the... ',
-              items: [{
-                  name: 'mostamount',
-                  title: 'Most amount you would every pay for a product like ours'
-                },
-                {
-                  name: 'leastamount',
-                  title: 'The least amount you would feel comfortable paying'
-                }
-              ]
-            }
-          ]
-        }, {
-          questions: [{
-            type: 'text',
-            name: 'email',
-            title: 'Thank you for taking our survey. Please enter your email address, then press the "Submit" button.'
-          }]
-        }]
-    };
+    json = {
+ goNextPageAutomatic: true,
+ pages: [
+  {
+   elements: [
+    {
+     type: "text",
+     inputType: "date",
+     name: "question1",
+     title: "Fecha de cx"
+    }
+   ],
+   name: "page1"
+  },
+  {
+   elements: [
+    {
+     type: "text",
+     inputType: "date",
+     name: "question2",
+     title: "Fecha de ingreso"
+    }
+   ],
+   name: "page2"
+  },
+  {
+   elements: [
+    {
+     type: "text",
+     inputType: "number",
+     name: "question3",
+     title: "Historia clínica"
+    }
+   ],
+   name: "page3"
+  },
+  {
+   elements: [
+    {
+     type: "text",
+     inputType: "number",
+     name: "question4",
+     title: "Evento #"
+    }
+   ],
+   name: "page4"
+  },
+  {
+   elements: [
+    {
+     type: "text",
+     name: "question5",
+     title: "Nombres"
+    },
+    {
+     type: "text",
+     name: "question6",
+     title: "Apellidos"
+    },
+    {
+     type: "dropdown",
+     choices: [
+      {
+       value: "0",
+       text: "Masculino"
+      },
+      {
+       value: "1",
+       text: "Femenino"
+      }
+     ],
+     choicesOrder: "asc",
+     name: "question7",
+     title: "Genero"
+    },
+    {
+     type: "text",
+     inputType: "date",
+     name: "question8",
+     title: "Fecha Nacimiento"
+    }
+   ],
+   name: "personal info"
+  },
+  {
+   elements: [
+    {
+     type: "dropdown",
+     choices: [
+      {
+       value: "1",
+       text: "Derecho"
+      },
+      {
+       value: "2",
+       text: "Izquierdo"
+      },
+      {
+       value: "3",
+       text: "Ambidiestro"
+      }
+     ],
+     choicesOrder: "asc",
+     name: "question9",
+     title: "Lateralidad"
+    }
+   ],
+   name: "page5"
+  },
+  {
+   elements: [
+    {
+     type: "radiogroup",
+     choices: [
+      {
+       value: "0",
+       text: "No"
+      },
+      {
+       value: "1",
+       text: "SI"
+      }
+     ],
+     name: "question10",
+     title: "TUMOR HIPOFISIARIO NO FUNCIONANATE"
+    }
+   ],
+   name: "page6"
+  },
+  {
+   elements: [
+    {
+     type: "dropdown",
+     choices: [
+      {
+       value: "I",
+       text: "Normal"
+      },
+      {
+       value: "II",
+       text: "Lesiones pequeñas"
+      },
+      {
+       value: "III",
+       text: "Cisternas obliteradas"
+      },
+      {
+       value: "IV",
+       text: "Línea media luxada > 5 mm"
+      },
+      {
+       value: "V",
+       text: "Lesión focal > 25 ml evacuada"
+      },
+      {
+       value: "VI",
+       text: "Lesión focal no evacuada"
+      }
+     ],
+     name: "question11",
+     title: "MARSHALL / TCDB (TCE)"
+    }
+   ],
+   name: "page7"
+  },
+  {
+   elements: [
+    {
+     type: "dropdown",
+     choices: [
+      {
+       value: "1",
+       text: "Fernando Hakim"
+      },
+      {
+       value: "2",
+       text: "Enrique Jimenez"
+      },
+      {
+       value: "3",
+       text: "Juan Armando Mejia"
+      },
+      {
+       value: "4",
+       text: "Guillermo Monsalve"
+      },
+      {
+       value: "5",
+       text: "Kemel Gothme"
+      },
+      {
+       value: "6",
+       text: "Juan Fernando Ramon"
+      },
+      {
+       value: "7",
+       text: "Andres Rodriguez"
+      },
+      {
+       value: "8",
+       text: "Fernando Alvarado"
+      },
+      {
+       value: "9",
+       text: "Luis Carlos Morales"
+      },
+      {
+       value: "10",
+       text: "Camilo Velez"
+      },
+      {
+       value: "11",
+       text: "Nicolas Useche"
+      },
+      {
+       value: "12",
+       text: "Anibal Niño"
+      },
+      {
+       value: "13",
+       text: "Constanza Bedoya"
+      },
+      {
+       value: "14",
+       text: "Prada"
+      },
+      {
+       value: "15",
+       text: "Meneses"
+      }
+     ],
+     choicesOrder: "asc",
+     name: "question12",
+     title: "Cirujano"
+    }
+   ],
+   name: "page8"
+  }
+ ],
+ showNavigationButtons: true,
+ showProgressBar: "top"
+};
 
     onSurveySaved(survey) {
       this.json = survey;
